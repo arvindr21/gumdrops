@@ -50,7 +50,8 @@ const commonConfig = {
                     'PropTypes',
                     'createElement'
                 ],
-                'node_modules/react-dom/index.js': ['render']
+                'node_modules/react-dom/index.js': ['render'],
+                'node_modules/classnames': ['cx']
             }
         }),
         babel({
@@ -127,7 +128,7 @@ function createFileConfiguration(input, format, outputName, fileName) {
 
 // Creates ESM configs for components
 function buildESMConfigurations() {
-    const format = 'es';
+    const format = 'umd';
     return listFiles().reduce((acc, file) => {
         const { filepath, name } = getFileNameData(file, format);
         const config = createFileConfiguration(file, format, filepath, name);
@@ -280,7 +281,7 @@ async function build() {
             ...buildESMConfigurations()
         ];
 
-        await runTests();
+        // await runTests();
 
         log('Building modules');
         log('Please wait');

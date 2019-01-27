@@ -100,3 +100,4 @@ AccordionItem.propTypes = {
 };
 
 export default AccordionItem;
+// module.exports = AccordionItem;

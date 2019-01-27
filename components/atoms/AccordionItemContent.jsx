@@ -36,3 +36,4 @@ AccordionItemContent.propTypes = {
 };
 
 export default AccordionItemContent;
+// module.exports = AccordionItemContent;
