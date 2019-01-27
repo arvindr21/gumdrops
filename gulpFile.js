@@ -1,6 +1,6 @@
 var fs = require("fs");
 var browserify = require("browserify");
-browserify("./components/index.js")
+browserify("./dist/Button.js")
   .transform("babelify", {presets: ["@babel/preset-env", "@babel/preset-react"]})
   .bundle()
-  .pipe(fs.createWriteStream("./dist/_bundle.js"));
+  .pipe(fs.createWriteStream("./static/Button.js"));
